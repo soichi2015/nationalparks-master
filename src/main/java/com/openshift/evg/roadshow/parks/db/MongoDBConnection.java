@@ -48,6 +48,7 @@ public class MongoDBConnection {
         String mongoDBName = env.getProperty("mongodb.database", "mongodb"); // env var MONGODB_DATABASE takes precedence
 
         try {
+System.out.println("[====INFO===] " + mongoHost);
             String mongoURI = "mongodb://" + mongoUser + ":" + mongoPassword + "@" + mongoHost + ":" + mongoPort + "/" + mongoDBName;
             System.out.println("[INFO] Connection string: " + mongoURI);
             MongoClient mongoClient = new MongoClient(new MongoClientURI(mongoURI));
